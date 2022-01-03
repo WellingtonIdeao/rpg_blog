@@ -18,7 +18,8 @@ class Post(models.Model):
 
     author = models.ForeignKey(User,
                                on_delete=models.CASCADE,
-                               related_name='blog_posts')
+                               related_name='blog_posts',
+                               related_query_name='blog_post')
     body = models.TextField()
 
     publish = models.DateTimeField(default=timezone.now)
